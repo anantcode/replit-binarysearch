@@ -9,8 +9,9 @@ function binSearch(arr, target) {
   let isAsc = arr[start] < arr[end];
 
   while (start <= end) {
+
+    // Floor was required, in JS! In Java wont be needed.
     let mid = Math.floor(start + (end - start) / 2);
-    console.log(`mid is ${mid}`)
 
     if (arr[mid] == target) {
       return mid;
@@ -18,23 +19,19 @@ function binSearch(arr, target) {
 
     if (isAsc) {
       if (target < arr[mid]) {
-        end = mid - 1;
-                console.log(`new end is at index ${end}`)
+        end = mid - 1; //These +1 -1 is cool
       } else
         start = mid + 1;
-      console.log(`new start is at index ${start}`)
     } else {
       if (target > arr[mid]) {
         end = mid - 1;
-        console.log(`new end is at index ${end}`)
       } else {
         start = mid + 1;
-        console.log(`new start is ${start}`)
       }
     }
   }
 
-  return -1;
+  return -1; //make sure to return -1 if nothing was returned after all execution!
 
 }
 
