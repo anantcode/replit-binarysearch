@@ -1,4 +1,4 @@
-console.log("This is Binary Search")
+console.log("This is Binary Search basic, on Ascending sorted array\n\n");
 
 function binSearch(input, target) {
 
